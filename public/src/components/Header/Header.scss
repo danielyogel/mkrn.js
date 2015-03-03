@@ -1,0 +1,43 @@
+/*
+  \-------------------------------------/
+             SITE-HEADER
+  /-------------------------------------\
+*/
+
+.site-header {
+  border-bottom: 1px solid $darker_mkrn_color;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.site-header__logo {
+  ::selection {
+    color: darkmagenta;
+    background: lightgreen;
+  }
+  color: black;
+  font-size: 35px;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: -1px -1px 0 $main_mkrn_color, 1px -1px 0 $main_mkrn_color, -1px 1px 0 $main_mkrn_color, 1px 1px 0 $main_mkrn_color;
+  letter-spacing: 5px;
+  @include tablet {
+    display: inline-block;
+    text-align: left;
+    float: left;
+  }
+}
+
+.site-header__description {
+  color: darkmagenta;
+  font-weight: bold;
+  font-size: 15px;
+  @include tablet {
+    display: inline-block;
+    position: absolute;
+    bottom: 30%;
+    margin-left: 1%;
+    letter-spacing: 3px;
+  }
+}
+

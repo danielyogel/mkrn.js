@@ -1,0 +1,46 @@
+{
+  "name": "pirate-mkrn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "co-mocha": "^1.1.0",
+    "co-supertest": "0.0.8",
+    "colors": "^1.0.3",
+    "growl": "^1.8.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
+    "gulp-istanbul": "^0.6.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-util": "^3.0.2",
+    "install": "^0.1.8",
+    "rewire": "^2.1.3",
+    "rimraf": "^2.2.8",
+    "supertest": "^0.15.0",
+    "watchify": "^2.2.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.1.0",
+    "bluebird": "^2.9.9",
+    "bunyan": "^1.2.3",
+    "co": "^4.4.0",
+    "koa": "^0.18.0",
+    "koa-bodyparser": "^1.3.0",
+    "koa-bunyan": "0.0.2",
+    "koa-generic-session": "^1.5.0",
+    "koa-mongodb-session": "0.0.3",
+    "koa-router": "^4.2.0",
+    "koa-static": "^1.4.8",
+    "mongoose": "^3.8.23",
+    "ramda": "^0.10.0",
+    "verror": "^1.6.0"
+  }
+}

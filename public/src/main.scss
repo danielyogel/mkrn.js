@@ -1,0 +1,86 @@
+/*
+  \-------------------------------------/
+             variables
+  /-------------------------------------\
+*/
+$main_mkrn_color: #36ff76;
+$darker_mkrn_color: darken($main_mkrn_color, 30%);
+$main_font_family: "SourceSansPro", monospace;
+
+// media query brake points
+$large-poster-width: 430px;
+$tablet-width: 768px;
+$desktop-width: 1090px;
+
+/*
+  \-------------------------------------/
+             MIXINS
+  /-------------------------------------\
+*/
+@import 'helpers/mixins';
+
+/*
+  \-------------------------------------/
+             RESETS
+  /-------------------------------------\
+*/
+@import 'helpers/reset';
+html {
+  font-size: 62.5%;
+  background-color: #000c06;
+  font-family: 'Orbitron', sans-serif;
+  color: $main_mkrn_color;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: darkmagenta;
+  background: lightgreen;
+}
+
+/*
+  \-------------------------------------/
+             HELPERS
+  /-------------------------------------\
+*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-block {
+  display: block !important;
+}
+
+.is-frozen {
+  overflow: hidden !important;
+}
+
+.third {
+  float: left;
+  width: 33%;
+}
+
+.two-thirds {
+  float: left;
+  width: 66%;
+}
+
+@import './components/App/App';
+
+/*
+  \-------------------------------------/
+             ~~~ COMPONENTS ~~~
+  /-------------------------------------\
+*/
+@import './components/Header/Header';
+@import './components/Description/Description';
