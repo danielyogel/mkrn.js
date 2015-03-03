@@ -1,0 +1,44 @@
+/*
+  \-------------------------------------/
+             media queries mixins
+  /-------------------------------------\
+*/
+
+@mixin poster {
+  @media all and (min-width: #{$large-poster-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media all and (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+/*
+  \-------------------------------------/
+             placeholder mixin
+  /-------------------------------------\
+*/
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
