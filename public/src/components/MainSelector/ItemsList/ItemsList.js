@@ -23,7 +23,6 @@ export default React.createClass({
         </li>, this.props.items);
         return (
             <div className='items-list'>
-                <h1>List of people from the server: </h1>
                 <ul> {html_list} </ul>
             </div>
 

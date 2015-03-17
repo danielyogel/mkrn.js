@@ -30,6 +30,11 @@ $desktop-width: 1090px;
   clear: both;
 }
 
+.center-block {
+  margin: 0 auto;
+  width: 50%;
+}
+
 .is-hidden {
   display: none !important;
 }

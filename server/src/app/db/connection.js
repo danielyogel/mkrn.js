@@ -10,6 +10,7 @@ export default function connect_to_db() {
         mongoose.connect(DB_URI);
         var db = mongoose.connection;
         db.on('error', (err) => {
+            log.error('Failed to connet to database. msg is: ' + err.message);
             reject(new vError(err, 'failed to connect to mongoDB'));
         });
         db.once('open', (whatever) => {

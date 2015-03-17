@@ -56,12 +56,13 @@ export default React.createClass({
         return (
             <div className='main-selector'>
                 <header className='main-selector__header clearfix'>
-                    <h1 className='third'> Please select a view: </h1>
-                    <div className="third">
-                        <RaisedButton label='Items list' secondary={true} onClick={this.toggleView} />
-                    </div>
-                    <div className="third">
-                        <RaisedButton label='Create new item' secondary={true} onClick={this.toggleView}/>
+                    <div className="center-block">
+                        <div className="third">
+                            <RaisedButton label='Items list' secondary={true} onClick={this.toggleView} />
+                        </div>
+                        <div className="third">
+                            <RaisedButton label='Create new item' secondary={true} onClick={this.toggleView}/>
+                        </div>
                     </div>
                 </header>
                 <SelectedForm items= { this.state.items }/>
