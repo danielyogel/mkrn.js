@@ -1,7 +1,9 @@
 //libs
-import { React, _, reqwest , eventEmitter} from '../../helpers/libs.js';
-import {updateQueryParams, deleteQueryParam} from '../../router.js';
-import {ModelEventsMixin} from '../../helpers/react_mixins.js';
+import { React, _, reqwest , eventEmitter } from '../../helpers/libs.js';
+// router
+import { updateQueryParams, deleteQueryParam } from '../../router.js';
+// mixins
+import { ModelEventsMixin } from '../../helpers/react_mixins.js';
 
 /* \--------------------------------------------------------------------------------------------/
  *                    HEADER component

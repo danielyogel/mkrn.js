@@ -1,7 +1,9 @@
-// imports
-import {expect} from 'chai';
+// libs
+import { expect } from 'chai';
 import sinon from 'sinon';
-import {signUp as sendSignUp} from '../src/api/user_api.js';
+
+// modules to test
+import { signUp as sendSignUp } from '../src/api/user_api.js';
 
 
 /* \-----------------------------------------------/

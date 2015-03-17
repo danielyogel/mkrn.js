@@ -5,7 +5,7 @@
 */
 $main_mkrn_color: #36ff76;
 $darker_mkrn_color: darken($main_mkrn_color, 30%);
-$main_font_family: "SourceSansPro", monospace;
+//$main_font_family: "SourceSansPro", monospace;
 
 // media query brake points
 $large-poster-width: 430px;
@@ -18,29 +18,6 @@ $desktop-width: 1090px;
   /-------------------------------------\
 */
 @import 'helpers/mixins';
-
-/*
-  \-------------------------------------/
-             RESETS
-  /-------------------------------------\
-*/
-@import 'helpers/reset';
-html {
-  font-size: 62.5%;
-  background-color: #000c06;
-  font-family: 'Orbitron', sans-serif;
-  color: $main_mkrn_color;
-}
-
-* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-::selection {
-  color: darkmagenta;
-  background: lightgreen;
-}
 
 /*
   \-------------------------------------/
@@ -75,7 +52,39 @@ html {
   width: 66%;
 }
 
-@import './components/App/App';
+/*
+  \-------------------------------------/
+             Main styles
+  /-------------------------------------\
+*/
+@import 'helpers/reset';
+
+html {
+  font-size: 62.5%;
+  color: $main_mkrn_color;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::selection {
+  color: darkmagenta;
+  background: lightgreen;
+}
+
+.site-body {
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 20px;
+  @include desktop {
+    max-width: 1090px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+}
 
 /*
   \-------------------------------------/
@@ -83,4 +92,3 @@ html {
   /-------------------------------------\
 */
 @import './components/Header/Header';
-@import './components/Description/Description';

@@ -4,6 +4,7 @@ var Promise = require('bluebird'),
     rimraf = require('rimraf'),
     colors = require('colors'),
     sass = require('gulp-ruby-sass'),
+    less = require('gulp-less'),
     autoprefixer = require('gulp-autoprefixer'),
     babelify = require("babelify"),
     browserify = require('browserify'),
@@ -20,8 +21,10 @@ var srcDir = 'src/';
 var testsDir = 'tests/';
 var src_js_files = srcDir + '**/*.js';
 var src_mainjs = srcDir + 'main.js';
-var src_scss_files = srcDir + '**/*.scss';
 var src_scss_main = srcDir + 'main.scss';
+var src_scss_files = srcDir + '**/*.scss';
+var src_less_main = srcDir + 'main_material.less';
+var src_less_files = srcDir + '**/*.less';
 var src_unit_tests_files = testsDir + '**/*.js';
 // dist
 var distDir = 'dist/',
@@ -31,10 +34,10 @@ var distDir = 'dist/',
 function watchTask() {
     browserSync({proxy: 'localhost:' + 3000});
     logStillWatching();
-    deleteDistDir().then(watchifyBundle).then(karmaWatchify).then(compileSass).then(logStillWatching);
-    gulp.watch(src_scss_files, function (event) {
+    deleteDistDir().then(watchifyBundle).then(karmaWatchify).then(compileAllCss).then(logStillWatching);
+    gulp.watch([src_scss_files, src_less_files], function (event) {
         console.log(('Event type: ' + event.type + 'Event path: ' + event.path).rainbow.bold.inverse);
-        deleteCssDir().then(compileSass).then(logStillWatching);
+        deleteCssDir().then(compileAllCss).then(logStillWatching);
     });
 }
 
@@ -78,11 +81,28 @@ function karmaWatchify() {
     //});
 }
 
+/* \--------------------------------------------------------------------------------------------/
+ *                    compile all css
+ * /--------------------------------------------------------------------------------------------\ */
+function compileAllCss() {
+    return Promise.all([compileSass(), compileLess()]);
+}
 /* \-----------------------------------------------/
  *             SASS
  * /-----------------------------------------------\ */
 function compileSass() {
     return promsifyStream('compile scss', sass(src_scss_main)
+        .on('error', console.log.bind(this))
+        .pipe(autoprefixer({browsers: ['last 3 versions'], cascade: false}))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(browserSync.reload({stream: true})));
+}
+
+/* \--------------------------------------------------------------------------------------------/
+ *                    LESS
+ * /--------------------------------------------------------------------------------------------\ */
+function compileLess() {
+    return promsifyStream('compile less', gulp.src(src_less_main).pipe(less())
         .on('error', console.log.bind(this))
         .pipe(autoprefixer({browsers: ['last 3 versions'], cascade: false}))
         .pipe(gulp.dest('dist/css'))
@@ -134,11 +154,16 @@ function promsifyStream(name, stream) {
     return new Promise(function (reslove, reject) {
         console.log(('STARTING  ' + name).cyan.bold.inverse);
         stream.on('end', function () {
-            reslove();
             console.log(('ENDED  ' + name).green.bold.inverse);
+            reslove();
+        });
+        stream.on('finish', function () {
+            console.log(('ENDED  ' + name).green.bold.inverse);
+            reslove();
         });
     });
 }
 function logStillWatching() {
     console.log('Still watching for changes ...'.rainbow.bold.inverse);
 }
+
