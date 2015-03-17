@@ -1,5 +1,6 @@
 //libs
-import { React, _, reqwest, eventEmitter } from './libs.js';
+import {  _, reqwest, eventEmitter } from './libs.js';
+import React from 'react';
 
 export var ModelEventsMixin = {
     listener: function () {

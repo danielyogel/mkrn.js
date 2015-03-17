@@ -1,5 +1,5 @@
 // libs
-import { React, reqwest , eventEmitter, objectAssign } from '../helpers/libs.js';
+import {  reqwest , eventEmitter, objectAssign } from '../helpers/libs.js';
 import { signUp as sendSignUp, logOut as sendLogOut, isLoggedIn as sendIsLoggedIn } from '../api/user_api.js';
 
 // state

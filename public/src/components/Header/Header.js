@@ -1,5 +1,6 @@
 //libs
-import { React, _, reqwest , eventEmitter } from '../../helpers/libs.js';
+import {  _, reqwest , eventEmitter } from '../../helpers/libs.js';
+import React from 'react';
 // router
 import { updateQueryParams, deleteQueryParam } from '../../router.js';
 // mixins
@@ -15,7 +16,6 @@ export default React.createClass({
         return (
             <header className='site-header clearfix'>
                 <h1 className='site-header__logo'>MKRN.js
-                    <h2 className="site-header__description"> Mongo, Koa, React, Node.</h2>
                 </h1>
 
             </header>

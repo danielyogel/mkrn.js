@@ -61,7 +61,7 @@ $desktop-width: 1090px;
 
 html {
   font-size: 62.5%;
-  color: $main_mkrn_color;
+  //  color: $main_mkrn_color;
 }
 
 * {
@@ -70,8 +70,8 @@ html {
 }
 
 ::selection {
-  color: darkmagenta;
-  background: lightgreen;
+  //  color: darkmagenta;
+  //  background: lightgreen;
 }
 
 .site-body {
@@ -92,3 +92,7 @@ html {
   /-------------------------------------\
 */
 @import './components/Header/Header';
+@import './components/MainSelector/MainSelector';
+@import './components/MainSelector/CreateForm/CreateFrom';
+@import './components/MainSelector/ItemsList/ItemsList';
+@import './components/MainSelector/MainSelector';

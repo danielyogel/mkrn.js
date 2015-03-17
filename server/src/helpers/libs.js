@@ -7,7 +7,7 @@ import session       from 'koa-mongodb-session';
 import koaRouter    from 'koa-router';
 import assert       from 'assert';
 import vError       from 'verror';
-import ramda         from 'ramda';
+import _         from 'ramda';
 import path         from 'path';
 import bunyan        from 'bunyan';
 import co               from 'co';
@@ -15,9 +15,9 @@ import Promise          from 'bluebird';
 import bcrypt           from 'bcryptjs';
 import {expect}          from 'chai';
 import request    from 'co-supertest';
-var { merge, identity, omit, pick } = ramda;
+var { merge, identity, omit, pick } = _;
 
 
-export { koa, serve, bodyParser, mongoose, koaLogger, session, assert, vError, ramda, path, bunyan, co, Promise, bcrypt, merge, identity, expect, request, koaRouter, omit, pick }
+export { koa, serve, bodyParser, mongoose, koaLogger, session, assert, vError, _, path, bunyan, co, Promise, bcrypt, merge, identity, expect, request, koaRouter, omit, pick }
 
 

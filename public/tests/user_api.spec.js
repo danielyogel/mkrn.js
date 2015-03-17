@@ -22,7 +22,7 @@ describe('User API', ()=> {
         request = null;
     });
 
-    describe.only('#signUp', ()=> {
+    describe('#signUp', ()=> {
         it('When provided signup details, sends POST to /signup', () => {
             sendSignUp({email: 'some@email.com', first: 'joe', last: 'cohen', password: '12345678'});
             console.log(request.requestBody);
