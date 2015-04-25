@@ -34,7 +34,7 @@ var distDir = 'dist/',
 function watchTask() {
     browserSync({proxy: 'localhost:' + 3000});
     logStillWatching();
-    deleteDistDir().then(watchifyBundle).then(karmaWatchify).then(compileAllCss).then(logStillWatching);
+    deleteDistDir().then(watchifyBundle)/*.then(karmaWatchify)*/.then(compileAllCss).then(logStillWatching);
     gulp.watch([src_scss_files, src_less_files], function (event) {
         console.log(('Event type: ' + event.type + 'Event path: ' + event.path).rainbow.bold.inverse);
         deleteCssDir().then(compileAllCss).then(logStillWatching);

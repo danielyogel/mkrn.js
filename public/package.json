@@ -38,7 +38,7 @@
     "bluebird": "^2.9.8",
     "classnames": "^1.2.0",
     "immutable": "^3.6.2",
-    "material-ui": "^0.7.1",
+    "material-ui": "0.7.1",
     "object-assign": "^2.0.0",
     "query-string": "^1.0.0",
     "ramda": "^0.11.0",
